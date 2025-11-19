@@ -1,1 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stay informed with the SPEC COMPUTERS blog, featuring insights on technology trends, IT solutions, and tips to optimize your digital experience.">
+  <title>Blog - SPEC COMPUTERS</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #2a4ecc;
+      --secondary-color: #1a1a2e;
+      --accent-color: #0f3460;
+      --light-color: #f5f5f5;
+      --gray-color: #6c757d;
+      --dark-color: #212529;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: var(--light-color); color: var(--dark-color); line-height: 1.6; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    .blog-header { position: relative; padding: 100px 20px; text-align: center; color: white; overflow: hidden; margin-bottom: 40px; }
+    .header-background { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(42,78,204,0.7), rgba(26,26,46,0.8)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=70&fm=webp') center/cover no-repeat; z-index: -1; }
+    .blog-header h1 { font-size: 3.5rem; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); }
+    .blog-header p { font-size: 1.5rem; margin-bottom: 30px; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); max-width: 700px; margin-left: auto; margin-right: auto; }
+    .back-button { display: inline-block; padding: 12px 25px; background: var(--primary-color); color: white; text-decoration: none; border-radius: 5px; transition: var(--transition); font-weight: 600; }
+    .back-button:hover { background: #1a3bb3; transform: translateY(-2px); box-shadow: var(--shadow); }
+
+    /* Grid */
+    .blog-content { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; margin-bottom: 60px; }
+    .blog-post { background: white; border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); transition: var(--transition); }
+    .blog-post:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
+    .post-image { width: 100%; height: 200px; object-fit: cover; display:block; }
+    .post-content { padding: 25px; }
+    .blog-post h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--secondary-color); }
+    .post-meta { display: flex; align-items: center; margin-bottom: 15px; color: var(--gray-color); font-size: 0.9rem; }
+    .post-meta i { margin-right: 5px; }
+    .post-meta span { margin-right: 15px; }
+    .blog-post p { margin-bottom: 20px; color: var(--gray-color); }
+    .read-more { color: var(--primary-color); text-decoration: none; font-weight: 600; cursor: pointer; transition: var(--transition); display: inline-flex; align-items: center; }
+    .read-more:hover { color: #1a3bb3; }
+    .read-more i { margin-left: 5px; transition: var(--transition); }
+    .read-more:hover i { transform: translateX(5px); }
+
+    /* Modal */
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; overflow-y: auto; padding: 20px; }
+    .modal-content { background: white; max-width: 800px; margin: 40px auto; padding: 40px; border-radius: 15px; position: relative; animation: modalFadeIn 0.25s ease; box-shadow: 0 12px 30px rgba(0,0,0,0.2); }
+    @keyframes modalFadeIn { from { opacity: 0; transform: translateY(-12px);} to { opacity: 1; transform: translateY(0);} }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 2rem; color: var(--gray-color); cursor: pointer; background: none; border: none; }
+    .close-modal:hover { color: var(--primary-color); }
+    .modal-header { text-align: center; margin-bottom: 20px; }
+    .modal-body { line-height: 1.8; color: var(--gray-color); }
+    .modal-body p { margin-bottom: 16px; }
+    .blog-image { width: 100%; height: 300px; object-fit: cover; border-radius: 10px; margin: 20px 0; }
+
+    /* Footer */
+    .blog-footer { text-align: center; padding: 30px 0; border-top: 1px solid #eaeaea; color: var(--gray-color); font-size: 0.9rem; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .blog-header h1 { font-size: 2.5rem; }
+      .blog-header p { font-size: 1.2rem; }
+      .blog-content { grid-template-columns: 1fr; }
+      .modal-content { padding: 25px; margin: 20px auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="blog-header">
+      <div class="header-background"></div>
+      <h1>Digital Bytes</h1>
+      <p>Insights, news, and updates from the world of technology</p>
+      <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to Home</a>
+    </header>
+
+    <div class="blog-content">
+      <!-- Post 1: Latest - AI Minister (placed first) -->
+      <div class="blog-post">
+        <picture>
+          <source srcset="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=70&fm=webp 1x" type="image/webp">
+          <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=70" alt="AI Minister Albania" class="post-image" width="800" height="450">
+        </picture>
+        <div class="post-content">
+          <h3>Albania Appoints the World's First AI Minister</h3>
+          <div class="post-meta">
+            <span><i class="fas fa-calendar"></i> October 1, 2025</span>
+            <span><i class="fas fa-user"></i> By Peter KG</span>
+          </div>
+          <p>Robots in Government? Albania’s Wild New Minister Will Blow Your Mind!...</p>
+          <span class="read-more" data-post="1">Read More <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </div>
+
+      <!-- Post 2: Web Dev Trends -->
+      <div class="blog-post">
+        <picture>
+          <source srcset="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=70&fm=webp 1x" type="image/webp">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=70" alt="Web Development Trends" class="post-image" width="800" height="450">
+        </picture>
+        <div class="post-content">
+          <h3>Why You and Your Business Need a Website (Yes, Even You!)</h3>
+          <div class="post-meta">
+            <span><i class="fas fa-calendar"></i> September 25, 2025</span>
+            <span><i class="fas fa-user"></i> By Peter KG</span>
+          </div>
+          <p>If Customers Can’t Google You… Do You Even Exist?</p>
+          <span class="read-more" data-post="2">Read More <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </div>
+
+      <!-- Post 3: Cybersecurity -->
+      <div class="blog-post">
+        <picture>
+          <source srcset="https://images.unsplash.com/photo-1544890225-2f3faec4cd60?auto=format&fit=crop&w=800&q=70&fm=webp 1x" type="image/webp">
+          <img src="https://images.unsplash.com/photo-1544890225-2f3faec4cd60?auto=format&fit=crop&w=800&q=70" alt="Cybersecurity" class="post-image" width="800" height="450">
+        </picture>
+        <div class="post-content">
+          <h3>Cybersecurity and the rise of hacking in Kenya</h3>
+          <div class="post-meta">
+            <span><i class="fas fa-calendar"></i> September 15, 2025</span>
+            <span><i class="fas fa-user"></i> By Peter KG</span>
+          </div>
+          <p>Think You’re Too Small to Be Hacked? So Did They…</p>
+          <span class="read-more" data-post="3">Read More <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </div>
+
+      <!-- Post 4: AI in Business -->
+      <div class="blog-post">
+        <picture>
+          <source srcset="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=70&fm=webp 1x" type="image/webp">
+          <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=70" alt="AI in Business" class="post-image" width="800" height="450">
+        </picture>
+        <div class="post-content">
+          <h3>The Future of AI in Business</h3>
+          <div class="post-meta">
+            <span><i class="fas fa-calendar"></i> September 5, 2025</span>
+            <span><i class="fas fa-user"></i> By Peter KG</span>
+          </div>
+          <p>Robots Are Coming for Your Business – And That’s Actually Great News, here's why...</p>
+          <span class="read-more" data-post="4">Read More <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="blog-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+      <div class="modal-content" role="document">
+        <button class="close-modal" aria-label="Close modal">&times;</button>
+        <div class="modal-header">
+          <h2 id="modal-title"></h2>
+          <div class="post-meta" id="modal-meta"></div>
+        </div>
+        <div class="modal-body" id="modal-content"></div>
+      </div>
+    </div>
+
+    <footer class="blog-footer">
+      <p>© 2025 SPEC COMPUTERS. Last updated: <span id="last-updated"></span></p>
+    </footer>
+  </div>
+
+  <script>
+    // All posts fully defined (IDs match data-post attributes in DOM)
+    const blogPosts = {
+      1: {
+        title: "Albania Appoints the World's First AI Minister",
+        meta: '<span><i class="fas fa-calendar"></i> October 1, 2025</span><span><i class="fas fa-user"></i> By Peter KG</span>',
+        content: `
+          <picture>
+            <source srcset="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=70&fm=webp" type="image/webp">
+            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=70" alt="AI Minister" class="blog-image">
+          </picture>
+          <p>Well, here’s a plot twist no one saw coming: Albania. Yes, that small European country most of us only hear about during Eurovision just made history by appointing the world’s first Minister of Artificial Intelligence <strong>ADA</strong> (Advanced Digital Advisor). Yep, you read that right. Not a minister of agriculture or roads or goats (though goats are cool), but AI – the thing that writes essays, beats humans at chess, and sometimes hallucinates about things that don’t exist.</p>
+
+          <p>So what’s this all about? Basically, Albania’s government decided it’s time to stop treating AI like some futuristic toy and start treating it like the big deal it is. They’ve created a whole ministry dedicated to it, a person whose job is to make sure the country uses AI smartly, safely, and for the benefit of everyone. Think of them as the “AI whisperer” for the government.</p>
+
+          <p>This new minister will work on policies around how AI is used in schools, hospitals, businesses, and even government offices. Imagine your local government chatbot actually knowing what you’re talking about when you ask about your ID card – that’s the dream!.</p>
+
+          <p>You might wonder, “Okay, cool for Albania, but why should I care?” Because this is like the moment someone decided to invent sliced bread. It sets a global precedent. Governments everywhere are scratching their heads over how to handle AI. Some fear it will take jobs. Others fear it will become Skynet and launch nukes. Albania’s move is basically them saying, “Chill, we got this, let’s make AI work for us.”</p>
+
+          <p>Now, every other country is watching closely. If Albania pulls this off, we might start seeing Ministers of AI popping up everywhere – France, Japan, maybe even Mars (once Elon gets there). It shows that AI isn’t just Silicon Valley’s problem anymore; it’s a government-level issue.</p>
+
+          <p>Here’s where it gets spicy. Imagine if Kenya or any African country had a Minister of AI. At first, people might laugh. “We can’t even fix potholes, now we want robots?” But hold on. AI could actually help fix potholes. Picture an AI system that monitors roads with drones and sends repair crews before the governor even knows there’s a problem. Or an AI that detects corruption in real time – like, “Hey, this tender looks fishy!” – before the money mysteriously vanishes.</p>
+
+          <p>Of course, there’s the other side. Corruption in many parts of Africa is like that one relative who never leaves your house. If not handled carefully, AI could just become another fancy toy for the corrupt to misuse. Imagine a chatbot politely stealing public funds – not great. But if used wisely, AI could make government services more efficient, track money trails better, and even boost education and healthcare in places where resources are thin.</p>
+
+          <p>The idea of an AI minister still sounds like a sci-fi movie. Somewhere out there, someone is probably already imagining a robot in a suit giving press conferences: “Greetings, citizens. I have upgraded the economy by 12%.”</p>
+
+          <p>But jokes aside, Albania’s bold move might just be the start of a new global trend, one where governments treat AI as a serious tool, not just a buzzword. And maybe, just maybe, Kenya and the rest of Africa could follow suit, using AI not just to catch up with the world, but to leapfrog it entirely.</p>
+
+        `
+      },
+
+      2: {
+        title: "Why You and Your Business Need a Website (Yes, Even You!)",
+        meta: '<span><i class="fas fa-calendar"></i> September 25, 2025</span><span><i class="fas fa-user"></i> By Peter KG</span>',
+        content: `
+          <picture>
+            <source srcset="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=70&fm=webp" type="image/webp">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=70" alt="Web Development" class="blog-image">
+          </picture>
+          <p>Let’s be real, in 2025 saying your business doesn’t need a website is like saying you don’t need a phone. Technically true… but also wildly unhelpful. Whether you’re selling sneakers, offering haircuts, running a school, or just starting a side hustle, a website isn’t a luxury anymore, it’s a necessity.</p>
+
+          <p>Still not convinced? Let’s break it down.</p>
+
+          <p>Remember when “going online” meant waiting 5 minutes for one page to load? Those days are gone. Kenya now boasts over <strong>76 million mobile users</strong> (yep, more SIM cards than people!) and internet coverage that’s expanding faster than Nairobi traffic during rush hour. With cheaper smartphones and 4G and 5G popping up everywhere, even people in small towns and villages are scrolling, shopping, and searching online. That means one thing: your customers are online. And if you’re not there with them… you’re basically invisible.</p>
+
+          <p>Here’s the magic of a website: it doesn’t sleep, it doesn’t take public holidays, and it doesn’t close at 5 p.m. Your website is like a tireless salesperson who works 24/7, rain or shine, showing off your products or services to anyone who’s curious.</p>
+
+          <p>Someone Googles “best bakery in Kisumu”? Bam!, your cake business can show up. A tourist searches “affordable safaris in Kenya”? Boom! your tour company is right there. Without a website, you’re missing out on those golden moments when customers are actively searching for what you offer.</p>
+
+          <p>Here’s another thing: smartphones are now basically everyone’s pocket shop. People check restaurant menus, compare prices, book services, and even hire fundis, all from their phones. A well-designed website means they can find you while chilling on the sofa or stuck in traffic on Waiyaki Way.</p>
+
+          <p>Even social media can’t fully replace a website. Sure, Instagram and TikTok are great, but your website gives you control — your own space, your own brand, your own story. It’s like renting a stall at the market versus owning the whole shop.</p>
+
+          <p>Let’s be honest, when you search for a business and find nothing online, it feels… suspicious. Like, “Is this even a real company?” A website gives your business credibility. It tells customers, “Hey, we’re legit. We’re here. And here’s everything you need to know about us.”</p>
+
+          <p>Add some customer reviews, nice photos, and clear contact info, and boom! you’ve already built more trust than any poster on a streetlight ever could.</p>
+
+          <p>You might be thinking, “Websites sound expensive.” But here’s the plot twist: they’re not. Basic websites today can cost less than a fancy dinner, and they keep working for you long after you’ve eaten that dinner and forgotten about it. Plus, the return on investment is huge. More visibility, more customers, and more sales.</p>
+
+          <p>The world isn’t waiting. Businesses in Kenya and across Africa are going online at lightning speed. From boda boda booking apps to online grocery stores, even the smallest ventures are building websites and reaching customers far beyond their neighborhoods.</p>
+
+          <p>So whether you’re a small startup in Eldoret, a salon in Mombasa, or a growing brand in Nairobi, now’s the time to plant your flag online. A website isn’t just a tool, it’s your ticket to the digital economy.</p>
+
+          <p>If your business isn’t on the internet, you’re leaving money on the table. And trust me, someone else with a website is going to pick it up. So stop hesitating, your future customers are already online. Send us a message and we'll craft one just for you.</p>
+
+        `
+      },
+
+      3: {
+        title: "Cybersecurity Best Practices for 2024",
+        meta: '<span><i class="fas fa-calendar"></i> September 15, 2025</span><span><i class="fas fa-user"></i> By Peter KG</span>',
+        content: `
+          <picture>
+            <source srcset="https://images.unsplash.com/photo-1544890225-2f3faec4cd60?auto=format&fit=crop&w=1200&q=70&fm=webp" type="image/webp">
+            <img src="https://images.unsplash.com/photo-1544890225-2f3faec4cd60?auto=format&fit=crop&w=1200&q=70" alt="Cybersecurity" class="blog-image">
+          </picture>
+          <p>Once upon a time, "hacking" sounded like something that only happened in Hollywood movies, with hooded figures typing furiously in dark rooms while dramatic music played. Fast-forward to 2025, and it's happening right here in Kenya, in real life, and without the fancy soundtrack.</p>
+
+          <p>From government websites to small businesses and even individual phones, cyberattacks in Kenya have exploded between 2024 and 2025. If you're online (and let's be honest, who isn't?), you're already part of this story, whether you know it or not.</p>
+
+          <p>First, the good news: Kenya’s digital growth has been phenomenal. With internet coverage expanding across the country and tens of millions of smartphones in people’s hands, everything from banking to boda bookings now happens online.</p>
+
+          <p>Now the bad news: hackers noticed. And they’re not playing around anymore. According to recent cybersecurity reports, Kenya recorded millions of attempted cyberattacks in 2024, and that number shot up even higher in 2025. Banks, schools, startups, and even county governments have been targets. Some hackers go after money. Others steal data. And some just do it "for fun," which is the worst kind of fun ever.</p>
+
+          <p>It’s not always dramatic. In fact, many attacks start with something as simple as a fake email that says, "Your parcel is ready, click here!" Click it, and boom, the hacker is inside your system faster than you can say "password123."</p>
+
+          <p>Other times, they target businesses with weak security. A small online shop might think, "Who would hack me?" until all their customer data is stolen. Or someone uses public Wi-Fi at a café, not realizing a hacker is sitting two tables away collecting their login details. It’s like leaving your front door open and being surprised when someone walks in.</p>
+
+          <p>Cybercrime is no longer just an "IT problem." It’s a business problem, a national security problem, and a personal problem. Kenyan companies have lost billions of shillings to scams, ransomware, and online fraud in the past two years.</p>
+
+          <p>For individuals, the risks are just as real. Fraudsters have drained bank accounts through SIM swaps. Fake loan apps have harvested personal data. And even WhatsApp accounts have been hijacked to scam friends and family. The criminals are getting smarter, and they’re not just going after big fish anymore, they’re after everyone.</p>
+
+          <p>The first step is awareness. If you know the risks, you’re already harder to hack. Businesses need to stop treating cybersecurity as an afterthought and start investing in it like they invest in marketing or rent. That means strong passwords (no more "123456"), regular system updates, employee training, and secure networks.</p>
+
+          <p>Individuals can protect themselves too. Be suspicious of links and emails, use two-factor authentication, and avoid sharing sensitive info online. And please, stop reusing the same password for everything. (You know who you are.)</p>
+
+          <p>Kenya’s government and private sector are stepping up efforts with new cybersecurity policies and partnerships to fight the rising tide of attacks. But the truth is, the hackers are evolving just as fast.</p>
+
+          <p>The future will belong to those who take cybersecurity seriously, businesses that protect customer data, governments that safeguard systems, and individuals who stay alert. It’s no longer optional. In 2025 and beyond, cybersecurity is survival.</p>
+
+          <p>Cyberattacks aren’t just something that happens to "other people" anymore. They’re happening here, right now, every day. And the cost of ignoring them is far higher than the cost of prevention.</p>
+
+          <p>So whether you’re a CEO, a student, or just someone who really loves mobile money, it’s time to lock your digital doors. Because while Kenya’s internet future is bright, we’ll only enjoy it if we keep the bad guys out.</p>
+        `
+      },
+
+      4: {
+        title: "The Future of AI in Business",
+        meta: '<span><i class="fas fa-calendar"></i> September 5, 2025</span><span><i class="fas fa-user"></i> By Peter KG</span>',
+        content: `
+          <picture>
+            <source srcset="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=70&fm=webp" type="image/webp">
+            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=70" alt="AI in Business" class="blog-image">
+          </picture>
+          <p>Let’s be honest, when people first heard about artificial intelligence, most of us pictured robots taking over the world or stealing our jobs. Fast-forward to today, and AI isn’t out to conquer humanity (yet). Instead, it’s busy writing emails, predicting shopping trends, answering customer questions, and helping businesses make smarter decisions faster than you can say, “Excel crashed again.”</p>
+
+          <p>AI is no longer just a shiny toy for tech nerds, it’s becoming the secret sauce behind how companies run, grow, and compete. Whether you run a massive corporation or a small kiosk selling mandazis, AI is creeping into every corner of business. And the future? Oh, it’s about to get even crazier.</p>
+
+          <p>The biggest reason businesses are drooling over AI is simple: it does things smarter, faster, and cheaper than humans can. Picture this: instead of paying a team of ten people to manually analyze sales data, an AI system can do it in seconds and even predict what customers will want next.</p>
+
+          <p>Customer service? AI chatbots are already answering questions day and night without complaining or taking bathroom breaks. Marketing? AI tools are writing catchy ads and figuring out which ones work best. Even hiring is getting an AI upgrade — scanning thousands of CVs in minutes and finding the best fit. (Though let’s hope it doesn’t reject people just because they used Comic Sans in their resume…)</p>
+
+          <p>Here’s the fun part: you don’t have to be Google or Microsoft to use AI. Even small businesses are jumping on the train. From automated accounting apps to AI tools that design logos or manage stock levels, the technology is becoming more affordable and easier to use.</p>
+
+          <p>Think about a small shop in Nairobi predicting which products will sell faster during the rainy season, or a farmer in Eldoret using AI to know when to plant for the best harvest. This isn’t science fiction, it’s already happening.</p>
+
+          <p>Now, let’s talk about Africa. The future of AI here is like a plate of ugali, full of potential, but needs the right mix. On the bright side, AI could revolutionize industries from agriculture to healthcare. Imagine AI systems predicting droughts before they happen, or helping hospitals diagnose diseases in remote villages with no doctors.</p>
+
+          <p>But (and it’s a big but), corruption could easily mess things up. If shady officials get involved, we might end up with “AI” systems that are just expensive excuses to steal public funds. Or worse, biased AI tools used unfairly. So the challenge for African countries is to put strong policies in place and make sure the tech actually benefits people, not politicians.</p>
+
+          <p>Here’s the kicker: AI might be brilliant, but it still can’t replace human creativity, empathy, or judgment. The best businesses of the future will use AI as a teammate, not a replacement. Think of AI as the super-smart intern who never sleeps but still needs your wisdom to make the right decisions.</p>
+
+          <p>The future of AI in business is going to be wild, full of opportunities, surprises, and probably a few hilarious mistakes (like the chatbot that once called a customer “bro” by accident). But one thing’s for sure: companies that learn how to use AI smartly will run faster, serve better, and dream bigger.</p>
+
+          <p>So whether you’re a CEO or just thinking of starting a side hustle, now’s the time to start paying attention. The AI train is leaving the station, and trust me, you’ll want a seat.</p>
+        `
+      }
+    };
+
+    const modal = document.getElementById('blog-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalMeta = document.getElementById('modal-meta');
+    const modalContent = document.getElementById('modal-content');
+    const closeBtn = document.querySelector('.close-modal');
+
+    document.querySelectorAll('.read-more').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-post');
+        const post = blogPosts[id];
+        if (!post) return;
+        modalTitle.innerHTML = post.title;
+        modalMeta.innerHTML = post.meta;
+        modalContent.innerHTML = post.content;
+        modal.style.display = 'block';
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    window.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+    function closeModal() {
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('last-updated').textContent = document.lastModified;
+
+  </script>
+
+  <script src="js/script.js"></script>
+
+  <script>
+    document.addEventListener("keydown", function(e) {
+      if (e.ctrlKey && (e.key === "u" || e.key === "U")) {
+        e.preventDefault();
+        alert("You are not allowed to copy content or view source!");
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
