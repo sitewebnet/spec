@@ -360,13 +360,16 @@
                         <input type="hidden" name="_template" value="table">
                         
                         <div class="form-group">
+                            <label for="name" class="sr-only">Full Name</label>
                             <input type="text" name="name" id="name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
+                            <label for="email" class="sr-only">Email Address</label>
                             <input type="email" name="email" id="email" placeholder="Email" required>
                         </div>
                         <div class="form-group">
-                            <select name="service" id="service" required>
+                            <label for="service" class="sr-only">Service Interested In</label>
+                            <select name="service" id="service" required aria-label="Select service you're interested in">    
                                 <option value="">Select Service</option>
                                 <option value="web-development">Web Development</option>
                                 <option value="ai-consultancy">AI Consultancy</option>
@@ -376,6 +379,7 @@
                             </select>
                         </div>
                         <div class="form-group">
+                            <label for="message" class="sr-only">Your Message</label>
                             <textarea name="message" id="message" placeholder="Message" required></textarea>
                         </div>
                         <button type="submit" class="btn">Send message</button>
@@ -437,6 +441,7 @@
     </script>     
 </body>
 </html>
+
 
 
 
