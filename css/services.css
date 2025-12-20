@@ -199,3 +199,65 @@
   }
 
 }
+/* Our Clients Section */
+.our-clients {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.clients-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+.client-item {
+    background: white;
+    border-radius: 8px;
+    padding: 0;
+    transition: all 0.3s ease;
+    border: 1px solid #eaeaea;
+}
+
+.client-link {
+    display: block;
+    padding: 20px 30px;
+    color: #3366cc;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.client-link:hover {
+    background: #3366cc;
+    color: white;
+    border-radius: 8px;
+}
+
+.clients-cta {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 1.1rem;
+}
+
+.clients-cta a {
+    color: #3366cc;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.clients-cta a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .client-link {
+        padding: 15px 20px;
+        font-size: 1.1rem;
+    }
+}
