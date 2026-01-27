@@ -695,6 +695,30 @@ section {
     background-color: var(--primary-color);
 }
 
+.whatsapp-float {
+    position: fixed; 
+    top: 75%;
+    right: 20px;     
+    background-color: #25d366; 
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; 
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+    z-index: 1000;   
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; 
+    transition: background-color 0.3s; 
+}
+
+.whatsapp-float:hover {
+    background-color: #1DA851; 
+}
 
 @media (max-width: 992px) {
     .section-title h2 {
@@ -809,6 +833,7 @@ section {
 .service-detail-link:hover .learn-more {
     transform: translateX(5px);
 }
+
 
 
 
