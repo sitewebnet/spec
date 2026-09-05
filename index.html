@@ -1,15 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Redirecting to Blog</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Digital Bytes</title>
+
     <link rel="canonical" href="https://www.speccomputers.co.ke/blog/"/>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
     <meta http-equiv="refresh" content="0; url=https://www.speccomputers.co.ke/blog/" />
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        .loader {
+            width: 55px;
+            height: 55px;
+            border: 5px solid #e5e5e5;
+            border-top: 5px solid #111111;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <p>Redirecting to <a href="https://www.speccomputers.co.ke/blog/">https://www.speccomputers.co.ke/blog/</a>...</p>
+
+    <div class="loader"></div>
+
     <script>
-        window.location.href = "https://www.speccomputers.co.ke/blog/";
+        window.location.replace("https://www.speccomputers.co.ke/blog/");
     </script>
+
 </body>
 </html>
