@@ -81,3 +81,20 @@
     max-width: 320px;
   }
 }
+
+.author-bio + .author-bio {
+  margin-top: 18px;
+}
+
+.author-bio a {
+  color: var(--primary-color, #2a4ecc);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px dotted currentColor;
+  transition: all 0.2s ease;
+}
+
+.author-bio a:hover {
+  color: #1a3bb3;
+  border-bottom-style: solid;
+}
