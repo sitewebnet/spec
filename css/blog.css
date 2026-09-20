@@ -1,0 +1,83 @@
+.blog-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 50px 0 60px;
+  padding: 0 20px;
+}
+
+/* Base button look */
+.blog-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  text-decoration: none;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+}
+
+.blog-actions .btn i {
+  font-size: 1.1rem;
+}
+
+/* About the Writer — outlined / secondary style */
+.blog-actions .btn-about {
+  background: transparent;
+  color: var(--primary-color, #2a4ecc);
+  border-color: var(--primary-color, #2a4ecc);
+}
+
+.blog-actions .btn-about:hover {
+  background: var(--primary-color, #2a4ecc);
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(42, 78, 204, 0.35);
+}
+
+/* Visit Store — solid / primary style */
+.blog-actions .btn-shop {
+  background: linear-gradient(135deg, #2a4ecc, #1a3bb3);
+  color: #ffffff;
+}
+
+.blog-actions .btn-shop:hover {
+  background: linear-gradient(135deg, #1a3bb3, #0f2a8a);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(42, 78, 204, 0.45);
+}
+
+/* Click feedback */
+.blog-actions .btn:active {
+  transform: translateY(-1px);
+}
+
+/* Focus ring for keyboard users */
+.blog-actions .btn:focus-visible {
+  outline: 3px solid #0f3460;
+  outline-offset: 3px;
+}
+
+/* Mobile: stack them nicely */
+@media (max-width: 600px) {
+  .blog-actions {
+    flex-direction: column;
+    gap: 14px;
+    margin: 40px 0 50px;
+  }
+
+  .blog-actions .btn {
+    width: 100%;
+    max-width: 320px;
+  }
+}
