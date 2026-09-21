@@ -98,3 +98,201 @@
   color: #1a3bb3;
   border-bottom-style: solid;
 }
+
+.author-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px 20px;
+}
+
+/* ---------- Hero ---------- */
+.author-hero {
+  background: linear-gradient(135deg, rgba(42,78,204,0.95), rgba(26,26,46,0.98));
+  border-radius: 20px;
+  padding: 50px 30px;
+  color: #fff;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.author-hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: left;
+}
+
+.author-avatar img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid rgba(255,255,255,0.25);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.author-intro { flex: 1; min-width: 260px; }
+
+.author-eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.85;
+  margin-bottom: 8px;
+  font-family: 'Courier New', monospace;
+}
+
+.author-intro h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  line-height: 1.15;
+}
+
+.author-tagline {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  margin-bottom: 8px;
+}
+
+.author-tagline .mono {
+  font-family: 'Courier New', monospace;
+  background: rgba(255,255,255,0.12);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.95em;
+}
+
+.author-location {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin-bottom: 22px;
+}
+
+.author-location i { margin-right: 6px; }
+
+/* Hero buttons */
+.author-cta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.author-cta .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.author-cta .btn-about {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255,255,255,0.7);
+}
+
+.author-cta .btn-about:hover {
+  background: #fff;
+  color: var(--primary-color, #2a4ecc);
+  transform: translateY(-3px);
+}
+
+.author-cta .btn-shop {
+  background: linear-gradient(135deg, #4a6ee0, #2a4ecc);
+  color: #fff;
+}
+
+.author-cta .btn-shop:hover {
+  background: linear-gradient(135deg, #2a4ecc, #1a3bb3);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+}
+
+/* ---------- Bio card ---------- */
+.author-section {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 30px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+
+.author-section h2 {
+  font-size: 1.4rem;
+  color: var(--secondary-color, #1a1a2e);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.author-section h2 i { color: var(--primary-color, #2a4ecc); }
+
+.author-bio {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #4a4a4a;
+}
+
+/* Space between the three paragraphs */
+.author-bio + .author-bio {
+  margin-top: 18px;
+}
+
+/* Inline links inside the bio */
+.author-bio a {
+  color: var(--primary-color, #2a4ecc);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px dotted currentColor;
+  transition: all 0.2s ease;
+}
+
+.author-bio a:hover {
+  color: #1a3bb3;
+  border-bottom-style: solid;
+}
+
+/* ---------- Bottom CTA row ---------- */
+.author-cta-bottom {
+  justify-content: center;
+  margin: 10px 0 50px;
+}
+
+.author-cta-bottom .btn-about {
+  color: var(--primary-color, #2a4ecc);
+  border-color: var(--primary-color, #2a4ecc);
+  background: transparent;
+}
+
+.author-cta-bottom .btn-about:hover {
+  background: var(--primary-color, #2a4ecc);
+  color: #fff;
+}
+
+.author-cta-bottom .btn-shop {
+  background: linear-gradient(135deg, #2a4ecc, #1a3bb3);
+  color: #fff;
+}
+
+.author-cta-bottom .btn-shop:hover {
+  background: linear-gradient(135deg, #1a3bb3, #0f2a8a);
+  box-shadow: 0 8px 18px rgba(42,78,204,0.4);
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 700px) {
+  .author-hero { padding: 35px 20px; }
+  .author-hero-inner { text-align: center; }
+  .author-intro h1 { font-size: 1.9rem; }
+  .author-cta { justify-content: center; }
+  .author-section { padding: 24px 20px; }
+}
